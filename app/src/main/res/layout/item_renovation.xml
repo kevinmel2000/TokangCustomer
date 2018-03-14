@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/renovation_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="165dp"
+    app:cardCornerRadius="4dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginEnd="4dp"
+    android:layout_marginTop="4dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:id="@+id/image_package"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:src="@drawable/to_renov_dark"
+            />
+        <TextView
+            android:id="@+id/package_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/latoregular"
+            android:text="Package Name"
+            android:textColor="@color/oil"
+            android:textSize="15sp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            />
+        <TextView
+            android:id="@+id/package_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/latoregular"
+            android:text="Rp.100.000"
+            android:textColor="@color/oil"
+            android:paddingTop="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textSize="10sp" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="5dp">
+        <Button
+            android:id="@+id/info"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:text="@string/info_label"
+            android:fontFamily="@font/latoregular"
+            android:textColor="@drawable/button_rounded_text_color"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/button_rounded"
+            android:layout_alignParentTop="true"
+            />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

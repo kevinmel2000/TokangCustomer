@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Tokang</string>
+    <string name="phone_number">Phone number</string>
+    <string name="login_label">Login</string>
+    <string name="no_account">No account yet?</string>
+    <string name="input_phone_label">Enter your phone number</string>
+    <string name="register_label">Register</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="invalid_email">Invalid email address</string>
+    <string name="indonesia_phone_code" translatable="false">+62</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_order">Order</string>
+    <string name="title_help">Help</string>
+    <string name="title_account">Account</string>
+    <string name="verification_code_info">Please insert the verification vode that has been sent to your Mobile phone number</string>
+    <string name="insert_otp_label">INSERT CODE</string>
+    <string name="send_label">Send</string>
+    <string name="resend_code">Resend code in</string>
+    <string name="please_wait">Please Wait...</string>
+    <string name="user_not_exist">Phone number not registered, please register</string>
+    <string name="user_exists">Phone number already registered, please login</string>
+    <string name="build_house_name">Build House</string>
+    <string name="renovation_name" translatable="false">ToRenov</string>
+    <string name="maintenance_name" translatable="false">ToFix</string>
+    <string name="interior_design_name">Interior Design</string>
+    <string name="tagline_build_house">Build your dream house</string>
+    <string name="tagline_renovation">Ready as planned</string>
+    <string name="tagline_maintenance">Best solution for problem</string>
+    <string name="tagline_interior_design">Beauty &amp; Comfort</string>
+    <string name="choose_build_house_package">Choose Package</string>
+    <string name="info_label">INFO</string>
+    <string name="order_now">PESAN</string>
+    <string name="to_renov_package_one">Bill of Quantity - Design - Execution</string>
+    <string name="to_renov_package_two">Design - Permit Building License</string>
+    <string name="to_renov_package_three">Bill of Quantity - Execution</string>
+    <string name="dummy_description" translatable="false">dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</string>
+    <string name="booking_confirmation">Booking Confirmation</string>
+    <string name="order_location_label">Order Location</string>
+    <string name="edit_label">Edit</string>
+    <string name="add_descriptions">Add Descriptions</string>
+    <string name="booking_time">Booking Time</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="cash_label" translatable="false">CASH</string>
+    <string name="consultation_fee">Consultation Fee</string>
+    <string name="dummy_price" translatable="false">Rp. 100.000</string>
+    <string name="total_payment">Total Payment</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="label_free">Free</string>
+    <string name="chevron" translatable="false">></string>
+    <string name="choose_service">Choose Service</string>
+    <string name="unit_thousand">K</string>
+    <string name="unit_million">Mio</string>
+    <string name="unit_billion">Bio</string>
+    <string name="unit_trillion">Tio</string>
+</resources>
