@@ -9,6 +9,7 @@ public abstract class KeyConstants {
     public static final String RENOVATION_KEY="toRenov";
     public static final String MAINTENANCE_KEY="toFix";
     public static final String ADS_BANNER_KEY="adsBanner";
+    public static final String RECOMMENDED_ITEM_KEY="recommendedItem";
 
 
 }

@@ -17,6 +17,7 @@ public class Menu {
     private String description;
 
     private Integer index;
+    private String menuIcon;
 
     public Menu(String key, String name) {
         this.key = key;
@@ -85,5 +86,13 @@ public class Menu {
 
     public void setIndex(Integer index) {
         this.index = index;
+    }
+
+    public String getMenuIcon() {
+        return menuIcon;
+    }
+
+    public void setMenuIcon(String menuIcon) {
+        this.menuIcon = menuIcon;
     }
 }

@@ -2,35 +2,27 @@ package com.tokang.customer.viewholders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.tokang.customer.R;
 import com.tokang.customer.interfaces.ItemClickListener;
 
 /**
- * Created by royli on 1/28/2018.
+ * Created by royli on 3/14/2018.
  */
 
-public class MenuViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    public final ImageView imageLogo;
-    public final TextView menuTagline;
-    public final Button infoButton;
-    public ImageView menuIcon;
+public class RecommendationViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public final ImageView image;
+    public final TextView text;
 
     private ItemClickListener itemClickListener;
 
-    public MenuViewHolder(View itemView) {
+    public RecommendationViewHolder(View itemView) {
         super(itemView);
 
-        imageLogo = itemView.findViewById(R.id.menu_logo);
-        menuTagline = itemView.findViewById(R.id.menu_tagline);
-        infoButton = itemView.findViewById(R.id.info);
-        menuIcon = itemView.findViewById(R.id.menu_icon);
-
+        image = itemView.findViewById(R.id.image_recommendation);
+        text = itemView.findViewById(R.id.recommendation_name);
         itemView.setOnClickListener(this);
     }
 

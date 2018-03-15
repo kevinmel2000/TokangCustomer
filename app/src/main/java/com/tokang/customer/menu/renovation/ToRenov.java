@@ -19,7 +19,6 @@ import com.tokang.customer.R;
 import com.tokang.customer.adapter.RenovationAdapter;
 import com.tokang.customer.constants.KeyConstants;
 import com.tokang.customer.model.RenovationModel;
-import com.tokang.customer.utils.SpaceItemDecoration;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -72,8 +71,8 @@ public class ToRenov extends AppCompatActivity {
 
     private void setAdapter(){
         if(renovation_list.size()>0) {
-            RenovationAdapter renovationAdapterLeft = new RenovationAdapter(this, renovation_list);
-            recycler_renovation.setAdapter(renovationAdapterLeft);
+            RenovationAdapter renovationAdapter = new RenovationAdapter(this, renovation_list);
+            recycler_renovation.setAdapter(renovationAdapter);
         }
         loadingProgress.setVisibility(View.GONE);
     }

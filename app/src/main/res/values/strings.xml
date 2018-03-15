@@ -54,4 +54,5 @@
     <string name="unit_million">Mio</string>
     <string name="unit_billion">Bio</string>
     <string name="unit_trillion">Tio</string>
+    <string name="recomended_service">Recomended Service</string>
 </resources>

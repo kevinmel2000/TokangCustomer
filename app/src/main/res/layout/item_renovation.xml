@@ -27,7 +27,7 @@
             />
         <TextView
             android:id="@+id/package_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/latoregular"
             android:text="Package Name"
@@ -38,15 +38,15 @@
             />
         <TextView
             android:id="@+id/package_price"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/latoregular"
-            android:text="Rp.100.000"
+            android:text="@string/dummy_price"
             android:textColor="@color/oil"
             android:paddingTop="5dp"
             android:paddingStart="5dp"
             android:paddingEnd="5dp"
-            android:textSize="10sp" />
+            android:textSize="12sp" />
     </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,8 +20,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.tokang.customer.HomeActivity;
 import com.tokang.customer.R;
 import com.tokang.customer.adapter.MenuAdapter;
+import com.tokang.customer.adapter.RecommendationAdapter;
 import com.tokang.customer.constants.KeyConstants;
 import com.tokang.customer.model.Menu;
+import com.tokang.customer.model.RecommendedItem;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -52,8 +55,13 @@ public class MenuFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     private RecyclerView recycler_menu;
+    private GridLayoutManager layoutManager;
+
+    private RecyclerView recycler_recommendation;
+    private LinearLayoutManager recomLayoutManager;
 
     private List<Menu> menu_list;
+    private List<RecommendedItem> recom_item_list;
 
     private SpinKitView loadingProgress;
 
@@ -61,6 +69,7 @@ public class MenuFragment extends Fragment {
     private FirebaseDatabase database;
     private DatabaseReference adsBanner;
     private DatabaseReference menuRef;
+    private DatabaseReference recomRef;
 
     public MenuFragment() {
         // Required empty public constructor
@@ -94,12 +103,13 @@ public class MenuFragment extends Fragment {
         ((HomeActivity) getActivity()).setActionBarImage();
 
         menu_list = new ArrayList<>();
+        recom_item_list = new ArrayList<>();
 
         //Init Firebase
         database = FirebaseDatabase.getInstance();
         adsBanner = database.getReference(KeyConstants.ADS_BANNER_KEY);
         menuRef = database.getReference(KeyConstants.MENU_KEY);
-
+        recomRef = database.getReference(KeyConstants.RECOMMENDED_ITEM_KEY);
     }
 
     @Override
@@ -118,8 +128,13 @@ public class MenuFragment extends Fragment {
 
         recycler_menu = view.findViewById(R.id.recycler_menu);
         recycler_menu.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        layoutManager = new GridLayoutManager(getContext(),2);
         recycler_menu.setLayoutManager(layoutManager);
+
+        recycler_recommendation = view.findViewById(R.id.recycler_recommendation);
+        recycler_recommendation.setHasFixedSize(true);
+        recomLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        recycler_recommendation.setLayoutManager(recomLayoutManager);
 
         menuRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -137,6 +152,18 @@ public class MenuFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 getBannerSlider(view, dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        recomRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                getAllRecommendation(dataSnapshot);
             }
 
             @Override
@@ -167,6 +194,13 @@ public class MenuFragment extends Fragment {
         loadingProgress.setVisibility(View.GONE);
     }
 
+    private void setRecomAdapter(){
+        if(recom_item_list.size()>0){
+            RecommendationAdapter recomAdapter = new RecommendationAdapter(getContext(), recom_item_list);
+            recycler_recommendation.setAdapter(recomAdapter);
+        }
+    }
+
     private void getAllMenus(DataSnapshot dataSnapshot){
         for(DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
             String key = singleSnapshot.getKey();
@@ -176,6 +210,7 @@ public class MenuFragment extends Fragment {
             String logoLight = singleSnapshot.child("logoLight").getValue(String.class);
             String description = singleSnapshot.child("description").getValue(String.class);
             Integer index = singleSnapshot.child("index").getValue(Integer.class);
+            String menuIcon = singleSnapshot.child("menuIcon").getValue(String.class);
 
             ArrayList<String> imageDesc = new ArrayList<>();
             for(DataSnapshot imageDescSnapshot : singleSnapshot.child("imageDescription").getChildren()){
@@ -189,6 +224,7 @@ public class MenuFragment extends Fragment {
             menu.setDescription(description);
             menu.setImageDescription(imageDesc);
             menu.setIndex(index);
+            menu.setMenuIcon(menuIcon);
             menu_list.add(menu);
         }
         Collections.sort(menu_list, new Comparator<Menu>() {
@@ -198,6 +234,17 @@ public class MenuFragment extends Fragment {
             }
         });
         setAdapter();
+    }
+
+    private void getAllRecommendation(DataSnapshot dataSnapshot) {
+        for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
+            String image = singleSnapshot.child("image").getValue(String.class);
+            String name = singleSnapshot.child("name").getValue(String.class);
+
+            RecommendedItem ri = new RecommendedItem("tes", image, name);
+            recom_item_list.add(ri);
+        }
+        setRecomAdapter();
     }
 
     // TODO: Rename method, update argument and hook method into UI event

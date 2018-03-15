@@ -48,4 +48,5 @@
     <string name="unit_million">Jt</string>
     <string name="unit_billion">M</string>
     <string name="unit_trilion">T</string>
+    <string name="recomended_service">Rekomendasi Untukmu</string>
 </resources>

@@ -8,41 +8,72 @@
     android:background="@color/light_gray">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
-            <ss.com.bannerslider.views.BannerSlider
-                android:id="@+id/banner_slider"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="314dp"
-                app:interval="4000"
-                app:loopSlides="true"
-                app:defaultIndicators="round_square"
-                app:defaultBanner="1"
-                app:animateIndicators="true"
-                android:padding="16dp"
-                />
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="4dp"
+                >
+                <ss.com.bannerslider.views.BannerSlider
+                    android:id="@+id/banner_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:interval="4000"
+                    app:loopSlides="true"
+                    app:defaultIndicators="round_square"
+                    app:defaultBanner="1"
+                    app:animateIndicators="true"
+                    />
+            </android.support.v7.widget.CardView>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:textColor="@color/aluminum"
-                android:background="@drawable/card_stroke"
                 android:fontFamily="@font/neo_sans_black"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:gravity="center_vertical"
-                android:paddingLeft="16dp"
-                android:text="@string/choose_service"
+                android:text="@string/recomended_service"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
                 />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                android:layout_marginBottom="4dp"
+                >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_recommendation"
+                    android:layout_width="match_parent"
+                    android:scrollbars="none"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_menu"
                 android:layout_width="match_parent"
-                android:scrollbars="vertical"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:paddingStart="4dp"
+                android:paddingEnd="0dp"
+                >
 
             </android.support.v7.widget.RecyclerView>
         </LinearLayout>
@@ -52,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            app:SpinKit_Color="@color/primary"
             style="@style/SpinKitView.Large.DoubleBounce"
             />
     </RelativeLayout>
